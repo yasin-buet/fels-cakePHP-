@@ -1,19 +1,4 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,39 +6,89 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
-    <?= $this->Html->meta('icon') ?>
-
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
-
+    <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+  <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#"> <?= __('Framgia E-Learning System') ?></a>
+      <a class="navbar-brand" href="#"><?= __('Framgia E-Learning System') ?></a>
     </div>
     <ul class="nav navbar-nav">
-      <li>
-        <?= $this->Html->link(
-            __('Home'),
-            ['controller' => 'Users', 'action' => 'index', '_full' => true]
-            ); ?>
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= __('Words') ?>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><?= $this->Html->link(
+            __('List Words'),
+            ['controller' => 'Words', 'action' => 'index', '_full' => true]
+            ); ?></a></li>
+          <li><a href="#"><?= $this->Html->link(
+            __('Add Words'),
+            ['controller' => 'Words', 'action' => 'add', '_full' => true]
+            ); ?></a></li>
+        </ul>
       </li>
-      </ul>
-      
-
-
-
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= __('Category') ?>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><?= $this->Html->link(
+            __('List category'),
+            ['controller' => 'Categories', 'action' => 'index', '_full' => true]
+            ); ?></a></li>
+          <li><a href="#"><?= $this->Html->link(
+            __('Add categories'),
+            ['controller' => 'Categories', 'action' => 'add', '_full' => true]
+            ); ?></a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= __('Lessons') ?>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><?= $this->Html->link(
+            __('List Lessons'),
+            ['controller' => 'Lessons', 'action' => 'index', '_full' => true]
+            ); ?></a></li>
+        </ul>
+        </li> 
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <?php if (!($this->request->session()->read('Auth.User'))) : ?>
+          <li></span><?= $this->Html->link(
+            __('Register'),
+            ['controller' => 'Users', 'action' => 'add', '_full' => true]
+            ); ?></li>
+          <li></span><?= $this->Html->link(
+            __('Sign In'),
+            ['controller' => 'Users', 'action' => 'login', '_full' => true]
+            ); ?></li>
+            }
+        <?php endif; ?>
+        <?php if ($this->request->session()->read('Auth.User')) : ?>
+          <li></span><?= $this->Html->link(
+            __('Logout'),
+            ['controller' => 'Users', 'action' => 'logout', '_full' => true]
+            ); ?></li>
+            }
+        <?php endif; ?>
+    </ul>
+        
+    </ul>
+  </div>
 </nav>
     <?= $this->Flash->render() ?>
-    <div class="container clearfix">
+    <div class="container">
         <?= $this->fetch('content') ?>
     </div>
     <footer>

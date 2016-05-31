@@ -29,8 +29,8 @@ class UsersTableTest extends TestCase
         'app.lessons',
         'app.categories',
         'app.words',
-        'app.results',
-        'app.answers'
+        'app.answers',
+        'app.results'
     ];
 
     /**

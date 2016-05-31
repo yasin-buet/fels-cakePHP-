@@ -23,9 +23,7 @@
         <?php
             echo $this->Form->input('name');
             echo $this->Form->input('category_id', ['options' => $categories]);
-            echo $this->Form->input('description');
-            echo $this->Form->input('created_at');
-            echo $this->Form->input('updated_at');
+            echo $this->Form->input('meaning');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -10,9 +10,9 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property int $category_id
  * @property \App\Model\Entity\Category $category
- * @property string $description
- * @property \Cake\I18n\Time $created_at
- * @property \Cake\I18n\Time $updated_at
+ * @property string $meaning
+ * @property \Cake\I18n\Time $created
+ * @property \Cake\I18n\Time $modified
  * @property \App\Model\Entity\Answer[] $answers
  * @property \App\Model\Entity\Result[] $results
  */

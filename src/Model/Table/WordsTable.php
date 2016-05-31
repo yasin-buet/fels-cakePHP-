@@ -31,6 +31,8 @@ class WordsTable extends Table
         $this->displayField('name');
         $this->primaryKey('id');
 
+        $this->addBehavior('Timestamp');
+
         $this->belongsTo('Categories', [
             'foreignKey' => 'category_id',
             'joinType' => 'INNER'
@@ -60,18 +62,8 @@ class WordsTable extends Table
             ->notEmpty('name');
 
         $validator
-            ->requirePresence('description', 'create')
-            ->notEmpty('description');
-
-        $validator
-            ->dateTime('created_at')
-            ->requirePresence('created_at', 'create')
-            ->notEmpty('created_at');
-
-        $validator
-            ->dateTime('updated_at')
-            ->requirePresence('updated_at', 'create')
-            ->notEmpty('updated_at');
+            ->requirePresence('meaning', 'create')
+            ->notEmpty('meaning');
 
         return $validator;
     }

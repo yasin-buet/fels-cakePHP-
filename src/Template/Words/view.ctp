@@ -25,20 +25,20 @@
             <td><?= $word->has('category') ? $this->Html->link($word->category->name, ['controller' => 'Categories', 'action' => 'view', $word->category->id]) : '' ?></td>
         </tr>
         <tr>
-            <th><?= __('Description') ?></th>
-            <td><?= h($word->description) ?></td>
+            <th><?= __('Meaning') ?></th>
+            <td><?= h($word->meaning) ?></td>
         </tr>
         <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($word->id) ?></td>
         </tr>
         <tr>
-            <th><?= __('Created At') ?></th>
-            <td><?= h($word->created_at) ?></td>
+            <th><?= __('Created') ?></th>
+            <td><?= h($word->created) ?></td>
         </tr>
         <tr>
-            <th><?= __('Updated At') ?></th>
-            <td><?= h($word->updated_at) ?></td>
+            <th><?= __('Modified') ?></th>
+            <td><?= h($word->modified) ?></td>
         </tr>
     </table>
     <div class="related">

@@ -40,8 +40,8 @@ class CategoriesFixture extends TestFixture
         [
             'id' => 1,
             'name' => 'Lorem ipsum dolor sit amet',
-            'created_at' => 1464244300,
-            'updated_at' => 1464244300
+            'created_at' => 1464591637,
+            'updated_at' => 1464591637
         ],
     ];
 }

@@ -48,8 +48,8 @@ class LessonsFixture extends TestFixture
             'id' => 1,
             'user_id' => 1,
             'category_id' => 1,
-            'created_at' => 1464244316,
-            'updated_at' => 1464244316
+            'created_at' => 1464591624,
+            'updated_at' => 1464591624
         ],
     ];
 }
