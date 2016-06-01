@@ -48,8 +48,8 @@ class WordsFixture extends TestFixture
             'name' => 'Lorem ipsum dolor sit amet',
             'category_id' => 1,
             'meaning' => 'Lorem ipsum dolor sit amet',
-            'created' => '2016-05-30 09:57:56',
-            'modified' => '2016-05-30 09:57:56'
+            'created' => '2016-06-01 10:59:20',
+            'modified' => '2016-06-01 10:59:20'
         ],
     ];
 }

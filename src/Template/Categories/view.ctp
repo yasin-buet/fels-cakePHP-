@@ -23,12 +23,12 @@
             <td><?= $this->Number->format($category->id) ?></td>
         </tr>
         <tr>
-            <th><?= __('Created At') ?></th>
-            <td><?= h($category->created_at) ?></td>
+            <th><?= __('Created') ?></th>
+            <td><?= h($category->created) ?></td>
         </tr>
         <tr>
-            <th><?= __('Updated At') ?></th>
-            <td><?= h($category->updated_at) ?></td>
+            <th><?= __('Modified') ?></th>
+            <td><?= h($category->modified) ?></td>
         </tr>
     </table>
     <div class="related">
@@ -68,9 +68,9 @@
                 <th><?= __('Id') ?></th>
                 <th><?= __('Name') ?></th>
                 <th><?= __('Category Id') ?></th>
-                <th><?= __('Description') ?></th>
-                <th><?= __('Created At') ?></th>
-                <th><?= __('Updated At') ?></th>
+                <th><?= __('Meaning') ?></th>
+                <th><?= __('Created') ?></th>
+                <th><?= __('Modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($category->words as $words): ?>
@@ -78,9 +78,9 @@
                 <td><?= h($words->id) ?></td>
                 <td><?= h($words->name) ?></td>
                 <td><?= h($words->category_id) ?></td>
-                <td><?= h($words->description) ?></td>
-                <td><?= h($words->created_at) ?></td>
-                <td><?= h($words->updated_at) ?></td>
+                <td><?= h($words->meaning) ?></td>
+                <td><?= h($words->created) ?></td>
+                <td><?= h($words->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Words', 'action' => 'view', $words->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Words', 'action' => 'edit', $words->id]) ?>

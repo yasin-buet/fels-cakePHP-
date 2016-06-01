@@ -60,6 +60,10 @@
             __('List Lessons'),
             ['controller' => 'Lessons', 'action' => 'index', '_full' => true]
             ); ?></a></li>
+            <li><a href="#"><?= $this->Html->link(
+            __('Add Lessons'),
+            ['controller' => 'Lessons', 'action' => 'add', '_full' => true]
+            ); ?></a></li>
         </ul>
         </li> 
         </ul>

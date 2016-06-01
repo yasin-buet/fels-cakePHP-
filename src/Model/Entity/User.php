@@ -12,6 +12,7 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property string $email
  * @property string $password
  * @property string $avatar
+ * @property string $role
  * @property bool $is_admin
  * @property \Cake\I18n\Time $created_at
  * @property \Cake\I18n\Time $updated_at

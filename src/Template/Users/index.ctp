@@ -18,6 +18,7 @@
                 <th><?= $this->Paginator->sort('email') ?></th>
                 <th><?= $this->Paginator->sort('password') ?></th>
                 <th><?= $this->Paginator->sort('avatar') ?></th>
+                <th><?= $this->Paginator->sort('role') ?></th>
                 <th><?= $this->Paginator->sort('is_admin') ?></th>
                 <th><?= $this->Paginator->sort('created_at') ?></th>
                 <th><?= $this->Paginator->sort('updated_at') ?></th>
@@ -32,6 +33,7 @@
                 <td><?= h($user->email) ?></td>
                 <td><?= h($user->password) ?></td>
                 <td><?= h($user->avatar) ?></td>
+                <td><?= h($user->role) ?></td>
                 <td><?= h($user->is_admin) ?></td>
                 <td><?= h($user->created_at) ?></td>
                 <td><?= h($user->updated_at) ?></td>

@@ -68,6 +68,9 @@ class UsersTable extends Table
             ->notEmpty('avatar');
 
         $validator
+            ->allowEmpty('role');
+
+        $validator
             ->boolean('is_admin')
             ->requirePresence('is_admin', 'create')
             ->notEmpty('is_admin');

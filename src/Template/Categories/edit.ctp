@@ -20,8 +20,6 @@
         <legend><?= __('Edit Category') ?></legend>
         <?php
             echo $this->Form->input('name');
-            echo $this->Form->input('created_at');
-            echo $this->Form->input('updated_at');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

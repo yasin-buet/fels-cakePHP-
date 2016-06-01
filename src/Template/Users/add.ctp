@@ -17,6 +17,7 @@
             echo $this->Form->input('email');
             echo $this->Form->input('password');
             echo $this->Form->input('avatar');
+            echo $this->Form->input('role');
             echo $this->Form->input('is_admin');
             echo $this->Form->input('created_at');
             echo $this->Form->input('updated_at');

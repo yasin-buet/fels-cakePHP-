@@ -31,6 +31,10 @@
             <td><?= h($user->avatar) ?></td>
         </tr>
         <tr>
+            <th><?= __('Role') ?></th>
+            <td><?= h($user->role) ?></td>
+        </tr>
+        <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($user->id) ?></td>
         </tr>

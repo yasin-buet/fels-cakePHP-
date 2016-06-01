@@ -17,7 +17,7 @@ class WordsController extends AppController
      * @return \Cake\Network\Response|null
      */
     public function index()
-    {
+    {debug($this->Auth->user('role'));
         $this->paginate = [
             'contain' => ['Categories']
         ];
@@ -51,6 +51,10 @@ class WordsController extends AppController
      */
     public function add()
     {
+        if ($this->Auth->user('role') == 'user') {
+            $this->Flash->error(__('You are not authorized'));
+            return $this->redirect(['action' => 'index']);
+        }
         $word = $this->Words->newEntity();
         if ($this->request->is('post')) {
             $word = $this->Words->patchEntity($word, $this->request->data);
@@ -110,4 +114,22 @@ class WordsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
+//     public function isAuthorized($user)
+// {
+//     // All registered users can add articles
+//     if ($this->request->action === 'index') {
+//         return true;
+//     }
+
+//     // The owner of an article can edit and delete it
+//     // if (in_array($this->request->action, ['add', 'edit', 'delete'])) {
+//     //     // $articleId = (int)$this->request->params['pass'][0];
+//     //     // if ($this->Articles->isOwnedBy($articleId, $user['id'])) {
+//     //         return true;
+//     //     // }
+//     // }
+
+//     return parent::isAuthorized($user);
+// }
 }

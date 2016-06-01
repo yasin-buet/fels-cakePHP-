@@ -8,8 +8,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
- * @property \Cake\I18n\Time $created_at
- * @property \Cake\I18n\Time $updated_at
+ * @property \Cake\I18n\Time $created
+ * @property \Cake\I18n\Time $modified
  * @property \App\Model\Entity\Lesson[] $lessons
  * @property \App\Model\Entity\Word[] $words
  */
